@@ -31,22 +31,14 @@ export default function AboutSection() {
       <div className="grid md:grid-cols-2 gap-8 items-start">
         <div className="flex flex-col gap-6 text-base text-foreground/80 text-left">
           <p>
-            From my first "Hello, World!" program to developing complex machine learning models, my passion for technology has been a journey of constant learning and creation. As a final-year Computer Science student specializing in AI, I'm driven by the challenge of turning complex problems into elegant, impactful solutions.
+            Hi, I’m Pooja—a final-year B.Tech Computer Science student at SRM University, specializing in Artificial Intelligence and Machine Learning. I’m passionate about using technology to solve real-world problems, whether that’s developing solutions or problem solving.
           </p>
           <p>
-            Whether it's through research, building full-stack applications, or competing in hackathons, I thrive on pushing the boundaries of what's possible with code. My goal is to leverage technology to build a smarter, more efficient future.
+            My work bridges technical depth with creativity. From hands-on research in ML, I thrive at the intersection of innovation, impact, and collaboration. I love experimenting with new ideas, collaborating with diverse teams, and constantly learning—whether it’s a new programming language, a deep learning framework, or the latest trend in AI.
           </p>
-          <Card className="glassmorphism mt-4">
-            <CardHeader className='flex-row items-center gap-4 space-y-0 pb-2'>
-              <Sparkles className="w-8 h-8 text-accent" />
-              <CardTitle className="font-headline text-2xl">Fun Fact</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className='text-sm text-foreground/90'>
-                When I'm not coding, I'm probably catching up on the latest movies and series or discovering new music.
-              </p>
-            </CardContent>
-          </Card>
+          <p>
+            Beyond the code, I enjoy tackling LeetCode challenges, exploring emerging tech, and contributing to projects that make a difference. If you’re looking for someone who combines technical excellence with a drive for positive change, let’s connect!
+          </p>
         </div>
 
         <div className="flex flex-col gap-6 relative">

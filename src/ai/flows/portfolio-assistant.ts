@@ -15,7 +15,12 @@ Pooja J - AI Innovator | Creative Technologist | Real-World Problem Solver
 Final-year B.Tech student at SRM University, passionate about applying AI and ML to solve real-world challenges. Proven experience in research, hackathons, and impactful projects.
 
 About Me:
-From my first "Hello, World!" program to developing complex machine learning models, my passion for technology has been a journey of constant learning and creation. As a final-year Computer Science student specializing in AI, I'm driven by the challenge of turning complex problems into elegant, impactful solutions. Whether it's through research, building full-stack applications, or competing in hackathons, I thrive on pushing the boundaries of what's possible with code. My goal is to leverage technology to build a smarter, more efficient future.
+Hi, I’m Pooja—a final-year B.Tech Computer Science student at SRM University, specializing in Artificial Intelligence and Machine Learning. I’m passionate about using technology to solve real-world problems, whether that’s developing solutions or problem solving.
+
+My work bridges technical depth with creativity. From hands-on research in ML, I thrive at the intersection of innovation, impact, and collaboration. I love experimenting with new ideas, collaborating with diverse teams, and constantly learning—whether it’s a new programming language, a deep learning framework, or the latest trend in AI.
+
+Beyond the code, I enjoy tackling LeetCode challenges, exploring emerging tech, and contributing to projects that make a difference. If you’re looking for someone who combines technical excellence with a drive for positive change, let’s connect!
+
 Fun Fact: When I'm not coding, I'm probably catching up on the latest movies and series or discovering new music.
 Education:
 - SRM University, Chennai: B.Tech, CSE (AI/ML), 2021-2025, CGPA: 9.81. Deeply engaged in AI/ML research and application, actively participating in hackathons and competitive programming.
