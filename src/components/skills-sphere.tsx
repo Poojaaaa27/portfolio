@@ -4,7 +4,6 @@ import * as THREE from 'three'
 import { useRef, useState, useMemo, useEffect } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { Text, TrackballControls } from '@react-three/drei'
-import { useTheme } from 'next-themes'
 
 function Word({ children, position, theme }: { children: string; position: [number, number, number]; theme: string | undefined }) {
   const color = new THREE.Color()
@@ -64,31 +63,20 @@ function Cloud({ count = 6, radius = 25, words, theme }: { count?: number; radiu
     return <>{wordList.map(([pos, word], index) => <Word key={index} position={pos} children={word} theme={theme} />)}</>
 }
 
-export default function SkillsSphere({skills}: {skills: string[]}) {
-  const { resolvedTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
+export default function SkillsSphere({skills, theme}: {skills: string[], theme: string | undefined}) {
+  const fogColor = theme === 'dark' ? '#100a1f' : '#f7f8fd';
   const [key, setKey] = useState(0);
 
   useEffect(() => {
-    setMounted(true);
-  }, []);
-  
-  useEffect(() => {
     setKey(prev => prev + 1);
-  }, [resolvedTheme]);
+  }, [theme]);
 
-
-  if (!mounted) {
-    return null; // Return null until mounted on client, allows loader from dynamic import to show
-  }
-
-  const fogColor = resolvedTheme === 'dark' ? '#161a27' : '#f7f8fd';
 
   return (
     <div className="w-full h-[400px] md:h-[500px] cursor-grab">
         <Canvas key={key} dpr={[1, 2]} camera={{ position: [0, 0, 50], fov: 60 }}>
         <fog attach="fog" args={[fogColor, 50, 100]} />
-        <Cloud count={5} radius={25} words={skills} theme={resolvedTheme} />
+        <Cloud count={5} radius={25} words={skills} theme={theme} />
         <TrackballControls noPan />
         </Canvas>
     </div>
