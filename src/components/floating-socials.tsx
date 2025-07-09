@@ -7,17 +7,17 @@ const socials = [
   {
     label: 'GitHub',
     icon: Github,
-    href: 'https://github.com/pooja-j-14',
+    href: 'https://github.com/Poojaaaa27',
   },
   {
     label: 'LinkedIn',
     icon: Linkedin,
-    href: 'https://www.linkedin.com/in/pooja-j-14/',
+    href: 'https://www.linkedin.com/in/pooja-j-b72427251/',
   },
   {
     label: 'Email',
     icon: Mail,
-    href: 'mailto:poojaj1405@gmail.com',
+    href: 'mailto:poojaa1627@gmail.com',
   },
 ];
 
