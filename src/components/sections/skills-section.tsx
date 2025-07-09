@@ -1,6 +1,19 @@
 'use client';
 
-import { SkillsSphere } from '@/components/skills-sphere';
+import dynamic from 'next/dynamic';
+
+const SkillsSphere = dynamic(
+  () => import('@/components/skills-sphere').then((mod) => mod.SkillsSphere),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="w-full h-[400px] md:h-[500px] flex items-center justify-center">
+        <p className="text-muted-foreground">Loading interactive sphere...</p>
+      </div>
+    ),
+  }
+);
+
 
 const skillsData = {
   languages: {
