@@ -1,5 +1,5 @@
 import { BrainCircuit, Code, Wrench, Layers } from 'lucide-react';
-import { Card } from '@/components/ui/card';
+import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 
 const skills = {
@@ -34,25 +34,27 @@ export default function SkillsSection() {
         <p className="text-base md:text-lg text-muted-foreground mt-2">The skills and technologies I use to build things.</p>
       </div>
 
-      <Card className="glassmorphism w-full p-6 md:p-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {Object.values(skills).map((category) => (
-            <div key={category.title} className="flex flex-col gap-4">
-              <div className="flex items-center gap-3">
-                <category.icon className="w-8 h-8 text-accent" />
-                <h3 className="text-2xl font-bold font-headline">{category.title}</h3>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        {Object.values(skills).map((category) => (
+          <Card key={category.title} className="glassmorphism flex flex-col group hover:border-accent transition-all duration-300 transform hover:-translate-y-1">
+            <CardHeader className="flex-row items-center gap-4 space-y-0 pb-4">
+              <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-secondary flex items-center justify-center">
+                <category.icon className="w-7 h-7 text-accent" />
               </div>
+              <CardTitle className="font-headline text-2xl">{category.title}</CardTitle>
+            </CardHeader>
+            <CardContent className="flex-grow flex items-center">
               <div className="flex flex-wrap gap-2">
                 {category.items.map((item) => (
-                  <Badge key={item} variant="secondary" className="text-base px-3 py-1 bg-primary/10 text-primary border-primary/20 hover:bg-primary/20 cursor-default transition-colors">
+                  <Badge key={item} variant="secondary" className="text-sm font-medium px-3 py-1 bg-primary/10 text-primary border-primary/20 hover:bg-primary/20 cursor-default transition-colors">
                     {item}
                   </Badge>
                 ))}
               </div>
-            </div>
-          ))}
-        </div>
-      </Card>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
     </section>
   );
 }
