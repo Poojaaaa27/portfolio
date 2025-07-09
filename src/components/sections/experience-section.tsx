@@ -1,5 +1,7 @@
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Award, BarChart, Calendar, Trophy } from 'lucide-react';
+import { Card } from '@/components/ui/card';
+import { Award, Calendar, Trophy, Code } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 const experiences = [
     {
@@ -13,16 +15,11 @@ const experiences = [
         description: "Actively participated in CodeChef contests, achieving a 3-star rating and consistently solving complex algorithmic challenges."
     },
     {
-        icon: BarChart,
-        title: "Leaderboard Performance",
-        description: "Regularly ranked among the top performers in university-level contests, demonstrating strong problem-solving skills under pressure."
-    },
-    {
         icon: Calendar,
         title: "Challenge Streaks",
         description: "Maintained long streaks of daily problem-solving on platforms like LeetCode and GeeksforGeeks, showcasing dedication and consistency."
     }
-]
+];
 
 export default function ExperienceSection() {
   return (
@@ -41,8 +38,14 @@ export default function ExperienceSection() {
                 <div data-ai-hint="codechef logo" className="mt-4 w-40 h-40 rounded-lg bg-secondary/50 flex items-center justify-center mx-auto">
                    <Trophy className="w-20 h-20 text-primary"/>
                 </div>
+                 <Button asChild className="mt-6" variant="secondary">
+                  <Link href="https://leetcode.com/u/poojaa_j/" target="_blank" rel="noopener noreferrer">
+                    <Code className="mr-2 h-5 w-5" />
+                    View LeetCode Profile
+                  </Link>
+                </Button>
             </div>
-            <div className="flex-grow grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="flex-grow flex flex-col gap-6">
                 {experiences.map(exp => (
                     <div key={exp.title} className="flex items-start gap-4 p-4 rounded-lg hover:bg-secondary/50 transition-colors">
                         <div className="flex-shrink-0 w-10 h-10 flex items-center justify-center text-accent">

@@ -45,8 +45,8 @@ Research & Publications:
 Competitive Programming Experience (CodeChef University Club - SRMIST Chapter):
 - Event Organizer: Organized and managed multiple coding contests and workshops for the university community.
 - Competitive Programmer: Active in CodeChef contests, 3-star rating.
-- Leaderboard Performance: Regularly ranked among top performers in university-level contests.
 - Challenge Streaks: Maintained long streaks of daily problem-solving on platforms like LeetCode and GeeksforGeeks.
+- LeetCode Profile: https://leetcode.com/u/poojaa_j/
 `;
 
 
