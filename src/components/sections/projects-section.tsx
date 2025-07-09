@@ -30,7 +30,7 @@ const projects = [
     image: "https://placehold.co/600x400.png",
     imageHint: "data analysis",
     tags: ["Data Science", "ML"],
-    github: "https://github.com/pooja-j-14/Student-Stress-Level-Prediction"
+    github: "https://github.com/Poojaaaa27/Sentiment-Analysis-for-Mental-Health"
   }
 ];
 
