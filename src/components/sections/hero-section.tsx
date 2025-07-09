@@ -36,15 +36,15 @@ export default function HeroSection() {
               Let's Collaborate
             </Link>
           </Button>
-          <Button size="lg" variant="secondary" onClick={openChatBot}>
-            <Bot className="mr-2 h-5 w-5" />
-            Chat with my AI
-          </Button>
           <Button size="lg" variant="secondary" asChild>
             <a href="/pooja-j-resume.pdf" target="_blank" rel="noopener noreferrer">
               <FileText className="mr-2 h-5 w-5" />
               Download Resume
             </a>
+          </Button>
+          <Button size="lg" variant="secondary" onClick={openChatBot}>
+            <Bot className="mr-2 h-5 w-5" />
+            Chat with my AI
           </Button>
         </div>
       </div>

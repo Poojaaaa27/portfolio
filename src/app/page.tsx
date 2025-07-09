@@ -5,6 +5,7 @@ import HeroSection from '@/components/sections/hero-section';
 import ProjectsSection from '@/components/sections/projects-section';
 import ResearchSection from '@/components/sections/research-section';
 import SkillsSection from '@/components/sections/skills-section';
+import CertificationsSection from '@/components/sections/certifications-section';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
 import FloatingSocials from '@/components/floating-socials';
@@ -20,6 +21,7 @@ export default function Home() {
         <SkillsSection />
         <ProjectsSection />
         <ResearchSection />
+        <CertificationsSection />
         <ExperienceSection />
         <ContactSection />
       </main>
