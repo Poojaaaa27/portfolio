@@ -5,14 +5,8 @@ import { useRef, useState, useMemo, useEffect } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { Text, TrackballControls } from '@react-three/drei'
 
-function Word({ children, position, theme }: { children: string; position: [number, number, number]; theme: string | undefined }) {
+function Word({ children, position }: { children: string; position: [number, number, number] }) {
   const color = new THREE.Color()
-  const fontProps = {
-    fontSize: 2.2,
-    letterSpacing: -0.05,
-    lineHeight: 1,
-    'material-toneMapped': false,
-  }
   const ref = useRef<any>()
   const [hovered, setHovered] = useState(false)
   
@@ -28,17 +22,18 @@ function Word({ children, position, theme }: { children: string; position: [numb
     if (ref.current) {
         ref.current.quaternion.copy(camera.quaternion)
         
-        const accentColor = theme === 'dark' ? 'hsl(182, 100%, 74%)' : 'hsl(182, 90%, 45%)';
-        const foregroundColor = theme === 'dark' ? 'hsl(210, 40%, 98%)' : 'hsl(232, 30%, 15%)';
+        // Hardcoding colors for dark theme to debug
+        const accentColor = 'hsl(182, 100%, 74%)';
+        const foregroundColor = 'hsl(210, 40%, 98%)';
         
         ref.current.material.color.lerp(color.set(hovered ? accentColor : foregroundColor), 0.1)
     }
   })
 
-  return <Text ref={ref} onPointerOver={over} onPointerOut={out} position={position} {...fontProps}>{children}</Text>
+  return <Text ref={ref} onPointerOver={over} onPointerOut={out} position={position} fontSize={2.2} letterSpacing={-0.05} lineHeight={1} material-toneMapped={false}>{children}</Text>
 }
 
-function Cloud({ count = 6, radius = 25, words, theme }: { count?: number; radius?: number; words: string[]; theme: string | undefined }) {
+function Cloud({ count = 6, radius = 25, words }: { count?: number; radius?: number; words: string[] }) {
     const wordList = useMemo(() => {
         const temp: [[number, number, number], string][] = []
         const spherical = new THREE.Spherical()
@@ -60,24 +55,18 @@ function Cloud({ count = 6, radius = 25, words, theme }: { count?: number; radiu
         return temp
     }, [count, radius, words]);
   
-    return <>{wordList.map(([pos, word], index) => <Word key={index} position={pos} children={word} theme={theme} />)}</>
+    return <>{wordList.map(([pos, word], index) => <Word key={index} position={pos} children={word} />)}</>
 }
 
-export default function SkillsSphere({skills, theme}: {skills: string[], theme: string | undefined}) {
-  const fogColor = theme === 'dark' ? '#100a1f' : '#f7f8fd';
-  const [key, setKey] = useState(0);
-
-  useEffect(() => {
-    setKey(prev => prev + 1);
-  }, [theme]);
-
+export default function SkillsSphere({skills}: {skills: string[]}) {
+  const fogColor = '#100a1f'; // Hardcoding dark theme fog
 
   return (
     <div className="w-full h-[400px] md:h-[500px] cursor-grab">
-        <Canvas key={key} dpr={[1, 2]} camera={{ position: [0, 0, 50], fov: 60 }}>
-        <fog attach="fog" args={[fogColor, 50, 100]} />
-        <Cloud count={5} radius={25} words={skills} theme={theme} />
-        <TrackballControls noPan />
+        <Canvas dpr={[1, 2]} camera={{ position: [0, 0, 50], fov: 60 }}>
+            <fog attach="fog" args={[fogColor, 50, 100]} />
+            <Cloud count={5} radius={25} words={skills} />
+            <TrackballControls noPan />
         </Canvas>
     </div>
   )
