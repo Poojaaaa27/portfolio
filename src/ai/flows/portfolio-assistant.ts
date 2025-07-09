@@ -21,12 +21,6 @@ Education:
 - SRM University, Chennai: B.Tech, CSE (AI/ML), 2021-2025, CGPA: 9.81. Deeply engaged in AI/ML research and application, actively participating in hackathons and competitive programming.
 - Modern School, Nagpur: Higher Secondary (CBSE), 2021, Achieved 95% in Higher Secondary Certificate examinations, laying a strong foundation in science and mathematics.
 
-Technical Skills:
-- Languages: Python, C/C++, JavaScript, SQL, HTML/CSS
-- Frameworks & Databases: Node.js, Express, Flask, FastAPI, Streamlit, MongoDB
-- AI/ML Libraries: TensorFlow, PyTorch, Scikit-learn, Pandas, Numpy, OpenCV
-- Developer Tools: Git, GCP, Anaconda, PyCharm, VS Code
-
 Featured Projects:
 - AgriImpact: An innovative full-stack solution to optimize crop planning for farmers using ML-driven predictions. Reduced manual farm planning effort by 40%.
 - Anti Spoofing Detection: A robust system to enhance facial recognition security by detecting and preventing spoofing attacks. Achieved 98% accuracy in identifying spoofing attempts.
