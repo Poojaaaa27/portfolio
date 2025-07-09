@@ -12,7 +12,7 @@ const projects = [
     image: "https://placehold.co/600x400.png",
     imageHint: "agriculture technology",
     tags: ["Full Stack", "AI", "ML"],
-    github: "https://github.com/pooja-j-14/AgriImpact"
+    github: "https://github.com/hyderabad25/Team-9"
   },
   {
     title: "Anti Spoofing Detection",
