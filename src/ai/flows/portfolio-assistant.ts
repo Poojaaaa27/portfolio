@@ -12,12 +12,12 @@ import {z} from 'genkit';
 
 const portfolioContext = `
 Pooja J - AI Innovator | Creative Technologist | Real-World Problem Solver
-Final-year B.Tech student at SRM University, passionate about applying AI and ML to solve real-world challenges. Proven experience in research, hackathons, and impactful projects.
 
 About Me:
 I'm a final-year Computer Science student at SRM University with a passion for using AI to solve real-world problems. I enjoy experimenting with new ideas, collaborating with diverse teams, and tackling LeetCode challenges. If you're looking for someone who combines technical excellence with a drive for positive change, let's connect!
 
 Fun Fact: When I'm not coding, I'm probably catching up on the latest movies and series or discovering new music.
+
 Education:
 - SRM University, Chennai: B.Tech, CSE (AI/ML), 2021-2025, CGPA: 9.81. Deeply engaged in AI/ML research and application, actively participating in hackathons and competitive programming.
 - Modern School, Nagpur: Higher Secondary (CBSE), 2021, Achieved 95% in Higher Secondary Certificate examinations, laying a strong foundation in science and mathematics.
@@ -36,11 +36,11 @@ Featured Projects:
 
 Research & Publications:
 - Title: Anti Spoofing Detection for Face Recognition using Image Quality Assessment and Deep Learning
-- Publication: IEEE CONFERENCE PUBLICATION
+- Publication: IEEE CONFERENCE PUBLICATION (Publication Pending)
 - Summary: This research introduces a novel two-step model combining image quality assessment and a fine-tuned MobileNetV2 architecture to effectively combat face spoofing attacks. Our method demonstrates high accuracy and robustness across various spoofing techniques. Achieved 96.5% F1 Score.
 - Title: Accuracy Improvement in Diabetic Retinopathy Detection
 - Publication: IEEE International Conference on Research and Technology
-- Summary: This work compares four high-performing machine learning models to develop a robust prediction model for Diabetic Retinopathy, achieving high precision and recall with CNN, Transfer Learning, and Ensemble models.
+- Summary: This work compares four high-performing machine learning models to develop a robust prediction model for Diabetic Retinopathy, achieving high precision and recall with CNN, Transfer Learning, and Ensemble models. The publication is available at https://ieeexplore.ieee.org/document/10895961.
 
 Competitive Programming Experience (CodeChef University Club - SRMIST Chapter):
 - Event Organizer: Organized and managed multiple coding contests and workshops for the university community.
