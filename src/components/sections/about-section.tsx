@@ -31,13 +31,13 @@ export default function AboutSection() {
       <div className="grid md:grid-cols-2 gap-8 items-start">
         <div className="flex flex-col gap-6 text-base text-foreground/80 text-left">
           <p>
-            Hi, I’m Pooja—a final-year B.Tech Computer Science student at SRM University, specializing in Artificial Intelligence and Machine Learning. I’m passionate about using technology to solve real-world problems, whether that’s developing solutions or problem solving.
+            I'm a final-year Computer Science student at SRM University, specializing in AI/ML and passionate about solving real-world challenges.
           </p>
           <p>
-            My work bridges technical depth with creativity. From hands-on research in ML, I thrive at the intersection of innovation, impact, and collaboration. I love experimenting with new ideas, collaborating with diverse teams, and constantly learning—whether it’s a new programming language, a deep learning framework, or the latest trend in AI.
+            I thrive at the intersection of technology and creativity, always eager to learn and collaborate on impactful projects.
           </p>
           <p>
-            Beyond the code, I enjoy tackling LeetCode challenges, exploring emerging tech, and contributing to projects that make a difference. If you’re looking for someone who combines technical excellence with a drive for positive change, let’s connect!
+            Beyond the code, I enjoy tackling new challenges and exploring emerging tech. If you're looking for a driven innovator, let's connect!
           </p>
         </div>
 
