@@ -84,7 +84,7 @@ export default function CertificationsSection() {
        <div className="absolute top-0 right-1/4 w-48 h-48 bg-primary/10 rounded-full blur-3xl -z-10 animate-pulse animation-delay-2000"></div>
       <div className="text-center mb-12">
         <h2 className="text-4xl md:text-5xl font-bold font-headline">Certifications</h2>
-        <p className="text-lg text-muted-foreground mt-2">Recognized achievements and validated skills.</p>
+        <p className="text-base md:text-lg text-muted-foreground mt-2">Recognized achievements and validated skills.</p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {certifications.map((cert, index) => (

@@ -30,7 +30,7 @@ export default function ExperienceSection() {
       <div className="absolute bottom-0 -right-16 w-72 h-72 bg-primary/10 rounded-full blur-3xl -z-10 animate-pulse animation-delay-2000"></div>
       <div className="text-center mb-12">
         <h2 className="text-4xl md:text-5xl font-bold font-headline">Competitive Programming</h2>
-        <p className="text-lg text-muted-foreground mt-2">Thriving in the world of algorithms and challenges.</p>
+        <p className="text-base md:text-lg text-muted-foreground mt-2">Thriving in the world of algorithms and challenges.</p>
       </div>
 
       <Card className="glassmorphism p-8">

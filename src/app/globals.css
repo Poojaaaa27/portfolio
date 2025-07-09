@@ -78,10 +78,10 @@
     scroll-behavior: smooth;
   }
   section {
-    @apply py-20 md:py-32;
+    @apply py-16 md:py-24;
   }
 }
 
 .glassmorphism {
-    @apply bg-card/60 backdrop-blur-xl border border-border;
+    @apply bg-card/50 backdrop-blur-lg border border-border;
 }

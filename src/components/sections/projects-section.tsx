@@ -40,7 +40,7 @@ export default function ProjectsSection() {
       <div className="absolute top-1/2 -left-16 w-72 h-72 bg-accent/10 rounded-full blur-3xl -z-10 animate-pulse"></div>
       <div className="text-center mb-12">
         <h2 className="text-4xl md:text-5xl font-bold font-headline">Featured Projects</h2>
-        <p className="text-lg text-muted-foreground mt-2">Bringing ideas to life with code.</p>
+        <p className="text-base md:text-lg text-muted-foreground mt-2">Bringing ideas to life with code.</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

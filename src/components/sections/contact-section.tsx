@@ -9,7 +9,7 @@ export default function ContactSection() {
     <section id="contact">
       <div className="text-center mb-12">
         <h2 className="text-4xl md:text-5xl font-bold font-headline">Get In Touch</h2>
-        <p className="text-lg text-muted-foreground mt-2">Let's collaborate and build something amazing!</p>
+        <p className="text-base md:text-lg text-muted-foreground mt-2">Let's collaborate and build something amazing!</p>
       </div>
 
       <div className="grid md:grid-cols-2 gap-12 items-center">

@@ -25,11 +25,11 @@ export default function AboutSection() {
        <div className="absolute bottom-0 right-1/4 w-48 h-48 bg-accent/20 rounded-full blur-3xl -z-10 animate-pulse animation-delay-4000"></div>
       <div className="text-center mb-12">
         <h2 className="text-4xl md:text-5xl font-bold font-headline">About Me</h2>
-        <p className="text-lg text-muted-foreground mt-2">My journey into the world of technology.</p>
+        <p className="text-base md:text-lg text-muted-foreground mt-2">My journey into the world of technology.</p>
       </div>
 
       <div className="grid md:grid-cols-2 gap-8 items-start">
-        <div className="flex flex-col gap-6 text-lg text-foreground/80 text-left">
+        <div className="flex flex-col gap-6 text-base text-foreground/80 text-left">
           <p>
             From my first "Hello, World!" program to developing complex machine learning models, my passion for technology has been a journey of constant learning and creation. As a final-year Computer Science student specializing in AI, I'm driven by the challenge of turning complex problems into elegant, impactful solutions.
           </p>
@@ -42,7 +42,7 @@ export default function AboutSection() {
               <CardTitle className="font-headline text-2xl">Fun Fact</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className='text-base text-foreground/90'>
+              <p className='text-sm text-foreground/90'>
                 When I'm not coding, I'm an avid keyboardist! I love recreating symphony pieces and exploring new melodies—it's my own version of algorithmic composition.
               </p>
             </CardContent>

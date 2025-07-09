@@ -29,7 +29,7 @@ export default function SkillsSection() {
     <section id="skills">
       <div className="text-center mb-12">
         <h2 className="text-4xl md:text-5xl font-bold font-headline">Technical Skills</h2>
-        <p className="text-lg text-muted-foreground mt-2">My developer toolkit.</p>
+        <p className="text-base md:text-lg text-muted-foreground mt-2">My developer toolkit.</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">

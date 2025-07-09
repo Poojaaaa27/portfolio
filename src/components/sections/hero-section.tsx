@@ -20,14 +20,14 @@ export default function HeroSection() {
       
       <div className="relative z-10 flex flex-col items-center gap-6 px-4">
         <div className="flex flex-col items-center gap-4">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold font-headline tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-gray-900 via-gray-700 to-gray-800 dark:from-gray-200 dark:to-gray-400">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold font-headline tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-gray-900 via-gray-700 to-gray-800 dark:from-gray-200 dark:to-gray-400">
             Pooja J
           </h1>
-          <p className="text-lg md:text-xl lg:text-2xl font-medium text-accent font-headline">
+          <p className="text-lg md:text-xl font-medium text-accent font-headline">
             AI Innovator | Creative Technologist | Real-World Problem Solver
           </p>
         </div>
-        <p className="max-w-2xl text-base md:text-lg text-foreground/80">
+        <p className="max-w-2xl text-base text-foreground/80">
           Final-year B.Tech student at SRM University, passionate about applying AI and ML to solve real-world challenges. Proven experience in research, hackathons, and impactful projects.
         </p>
         <div className="flex flex-wrap justify-center gap-4">
@@ -36,15 +36,15 @@ export default function HeroSection() {
               Let's Collaborate
             </Link>
           </Button>
+          <Button size="lg" variant="secondary" onClick={openChatBot}>
+            <Bot className="mr-2 h-5 w-5" />
+            Chat with my AI
+          </Button>
           <Button size="lg" variant="secondary" asChild>
             <a href="/pooja-j-resume.pdf" target="_blank" rel="noopener noreferrer">
               <FileText className="mr-2 h-5 w-5" />
               Download Resume
             </a>
-          </Button>
-          <Button size="lg" variant="secondary" onClick={openChatBot}>
-            <Bot className="mr-2 h-5 w-5" />
-            Chat with my AI
           </Button>
         </div>
       </div>
