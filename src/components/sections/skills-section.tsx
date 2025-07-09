@@ -3,7 +3,7 @@
 import dynamic from 'next/dynamic';
 
 const SkillsSphere = dynamic(
-  () => import('@/components/skills-sphere').then((mod) => mod.SkillsSphere),
+  () => import('@/components/skills-sphere'),
   {
     ssr: false,
     loading: () => (

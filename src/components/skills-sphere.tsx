@@ -65,7 +65,7 @@ function Cloud({ count = 6, radius = 25, words }: { count?: number; radius?: num
     return <>{wordList.map(([pos, word], index) => <Word key={index} position={pos} children={word} />)}</>
 }
 
-export function SkillsSphere({skills}: {skills: string[]}) {
+export default function SkillsSphere({skills}: {skills: string[]}) {
   const { theme } = useTheme();
   const [key, setKey] = useState(0);
 
