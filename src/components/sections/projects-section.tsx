@@ -31,6 +31,15 @@ const projects = [
     imageHint: "data analysis",
     tags: ["Data Science", "ML"],
     github: "https://github.com/Poojaaaa27/Sentiment-Analysis-for-Mental-Health"
+  },
+  {
+    title: "ResQbite",
+    description: "A platform using AI to tackle food waste by connecting donors with NGOs, featuring waste prediction and optimized delivery routes.",
+    impact: "Facilitates efficient food redistribution to support communities in need.",
+    image: "https://placehold.co/600x400.png",
+    imageHint: "food donation",
+    tags: ["AI", "ML", "Full Stack", "Data Science"],
+    github: "https://github.com/Poojaaaa27/ResQbites"
   }
 ];
 
@@ -43,7 +52,7 @@ export default function ProjectsSection() {
         <p className="text-base md:text-lg text-muted-foreground mt-2">Bringing ideas to life with code.</p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {projects.map((project, index) => (
           <Card key={index} className="glassmorphism flex flex-col overflow-hidden group hover:border-accent transition-all duration-300 transform hover:-translate-y-2">
             <CardHeader className="p-0">

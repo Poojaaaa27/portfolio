@@ -15,7 +15,7 @@ Pooja J - AI Innovator | Creative Technologist | Real-World Problem Solver
 Final-year B.Tech student at SRM University, passionate about applying AI and ML to solve real-world challenges. Proven experience in research, hackathons, and impactful projects.
 
 About Me:
-I'm a final-year Computer Science student at SRM University, specializing in AI/ML and passionate about solving real-world challenges. I thrive at the intersection of technology and creativity, always eager to learn and collaborate on impactful projects. Beyond the code, I enjoy tackling new challenges and exploring emerging tech. If you're looking for a driven innovator, let's connect!
+I'm a final-year Computer Science student at SRM University with a passion for using AI to solve real-world problems. I enjoy experimenting with new ideas, collaborating with diverse teams, and tackling LeetCode challenges. If you're looking for someone who combines technical excellence with a drive for positive change, let's connect!
 
 Fun Fact: When I'm not coding, I'm probably catching up on the latest movies and series or discovering new music.
 Education:
@@ -32,6 +32,7 @@ Featured Projects:
 - AgriImpact: An innovative full-stack solution to optimize crop planning for farmers using ML-driven predictions. Reduced manual farm planning effort by 40%.
 - Anti Spoofing Detection: A robust system to enhance facial recognition security by detecting and preventing spoofing attacks. Achieved 98% accuracy in identifying spoofing attempts.
 - Student Stress Level Prediction: An analytical tool that predicts student stress levels based on academic and personal factors, enabling timely intervention. Provided actionable insights for improving student wellness programs.
+- ResQbite: A platform using AI to reduce food waste by connecting donors with NGOs, featuring ML-powered waste prediction, nutritional analysis, and optimized delivery routes.
 
 Research & Publications:
 - Title: Anti Spoofing Detection for Face Recognition using Image Quality Assessment and Deep Learning
