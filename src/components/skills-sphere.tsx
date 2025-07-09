@@ -6,8 +6,7 @@ import { Canvas, useFrame } from '@react-three/fiber'
 import { Text, TrackballControls } from '@react-three/drei'
 import { useTheme } from 'next-themes'
 
-function Word({ children, position }: { children: string; position: [number, number, number] }) {
-  const { theme } = useTheme();
+function Word({ children, position, theme }: { children: string; position: [number, number, number]; theme: string | undefined }) {
   const color = new THREE.Color()
   const fontProps = {
     fontSize: 2.2,
@@ -37,10 +36,10 @@ function Word({ children, position }: { children: string; position: [number, num
     }
   })
 
-  return <Text ref={ref} onPointerOver={over} onPointerOut={out} position={position} {...fontProps} children={children} />
+  return <Text ref={ref} onPointerOver={over} onPointerOut={out} position={position} {...fontProps}>{children}</Text>
 }
 
-function Cloud({ count = 6, radius = 25, words }: { count?: number; radius?: number; words: string[] }) {
+function Cloud({ count = 6, radius = 25, words, theme }: { count?: number; radius?: number; words: string[]; theme: string | undefined }) {
     const wordList = useMemo(() => {
         const temp: [[number, number, number], string][] = []
         const spherical = new THREE.Spherical()
@@ -62,25 +61,34 @@ function Cloud({ count = 6, radius = 25, words }: { count?: number; radius?: num
         return temp
     }, [count, radius, words]);
   
-    return <>{wordList.map(([pos, word], index) => <Word key={index} position={pos} children={word} />)}</>
+    return <>{wordList.map(([pos, word], index) => <Word key={index} position={pos} children={word} theme={theme} />)}</>
 }
 
 export default function SkillsSphere({skills}: {skills: string[]}) {
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
   const [key, setKey] = useState(0);
 
   useEffect(() => {
-    // Re-mount canvas on theme change to update fog color
+    setMounted(true);
+  }, []);
+  
+  useEffect(() => {
     setKey(prev => prev + 1);
-  }, [theme]);
+  }, [resolvedTheme]);
 
-  const fogColor = theme === 'dark' ? '#161a27' : '#f7f8fd';
+
+  if (!mounted) {
+    return null; // Return null until mounted on client, allows loader from dynamic import to show
+  }
+
+  const fogColor = resolvedTheme === 'dark' ? '#161a27' : '#f7f8fd';
 
   return (
     <div className="w-full h-[400px] md:h-[500px] cursor-grab">
         <Canvas key={key} dpr={[1, 2]} camera={{ position: [0, 0, 50], fov: 60 }}>
         <fog attach="fog" args={[fogColor, 50, 100]} />
-        <Cloud count={5} radius={25} words={skills} />
+        <Cloud count={5} radius={25} words={skills} theme={resolvedTheme} />
         <TrackballControls noPan />
         </Canvas>
     </div>
