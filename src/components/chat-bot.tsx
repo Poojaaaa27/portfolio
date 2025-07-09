@@ -55,6 +55,7 @@ export function ChatBot() {
     <Dialog>
       <DialogTrigger asChild>
         <Button
+          id="chatbot-trigger-button"
           className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50 h-16 w-16 rounded-full shadow-lg"
           size="icon"
         >
