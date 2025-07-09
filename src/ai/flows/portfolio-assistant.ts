@@ -21,6 +21,12 @@ Education:
 - SRM University, Chennai: B.Tech, CSE (AI/ML), 2021-2025, CGPA: 9.81. Deeply engaged in AI/ML research and application, actively participating in hackathons and competitive programming.
 - Modern School, Nagpur: Higher Secondary (CBSE), 2021, Achieved 95% in Higher Secondary Certificate examinations, laying a strong foundation in science and mathematics.
 
+Skills:
+- Languages: Python, C, C++, HTML/CSS, SQL, JavaScript
+- Tools: Git, GCP, Anaconda, PyCharm, VS Code
+- Frameworks: Streamlit, Flask, Node.js, Express, MongoDB, FastAPI
+- Libraries: Pandas, Numpy, Scikit-learn, TensorFlow, PyTorch, OpenCV
+
 Featured Projects:
 - AgriImpact: An innovative full-stack solution to optimize crop planning for farmers using ML-driven predictions. Reduced manual farm planning effort by 40%.
 - Anti Spoofing Detection: A robust system to enhance facial recognition security by detecting and preventing spoofing attacks. Achieved 98% accuracy in identifying spoofing attempts.
@@ -30,6 +36,9 @@ Research & Publications:
 - Title: Anti Spoofing Detection for Face Recognition using Image Quality Assessment and Deep Learning
 - Publication: IEEE CONFERENCE PUBLICATION
 - Summary: This research introduces a novel two-step model combining image quality assessment and a fine-tuned MobileNetV2 architecture to effectively combat face spoofing attacks. Our method demonstrates high accuracy and robustness across various spoofing techniques. Achieved 96.5% F1 Score.
+- Title: Accuracy Improvement in Diabetic Retinopathy Detection
+- Publication: IEEE International Conference on Research and Technology
+- Summary: This work compares four high-performing machine learning models to develop a robust prediction model for Diabetic Retinopathy, achieving high precision and recall with CNN, Transfer Learning, and Ensemble models.
 
 Competitive Programming Experience (CodeChef University Club - SRMIST Chapter):
 - Event Organizer: Organized and managed multiple coding contests and workshops for the university community.

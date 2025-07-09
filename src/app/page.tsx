@@ -8,6 +8,7 @@ import CertificationsSection from '@/components/sections/certifications-section'
 import Header from '@/components/header';
 import Footer from '@/components/footer';
 import FloatingSocials from '@/components/floating-socials';
+import SkillsSection from '@/components/sections/skills-section';
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <main className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         <HeroSection />
         <AboutSection />
+        <SkillsSection />
         <ProjectsSection />
         <ResearchSection />
         <CertificationsSection />
