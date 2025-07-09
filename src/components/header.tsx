@@ -35,10 +35,9 @@ export default function Header() {
       }`}
     >
       <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
-          <Link href="/" className="flex items-center gap-2 text-2xl font-bold font-headline group">
-            <Bot className="text-primary group-hover:text-accent transition-colors" />
-            PoojaJ.AI
+        <div className="flex items-center justify-between h-16">
+          <Link href="/" className="flex items-center group">
+            <Bot className="h-8 w-8 text-primary group-hover:text-accent transition-colors" />
           </Link>
 
           <div className="hidden md:flex items-center gap-2">
@@ -61,9 +60,8 @@ export default function Header() {
               </SheetTrigger>
               <SheetContent side="right" className="bg-background/90 backdrop-blur-xl">
                 <div className="flex flex-col items-center justify-center h-full">
-                <Link href="/" className="flex items-center gap-2 text-2xl font-bold font-headline group mb-8">
-                  <Bot className="text-primary" />
-                  PoojaJ.AI
+                <Link href="/" className="flex items-center group mb-8">
+                  <Bot className="h-8 w-8 text-primary" />
                 </Link>
                   <nav className="flex flex-col items-center gap-6">
                     {navLinks.map((link) => (
