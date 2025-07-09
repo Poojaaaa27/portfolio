@@ -41,9 +41,9 @@ export default function HeroSection() {
             Chat with my AI
           </Button>
           <Button size="lg" variant="secondary" asChild>
-            <a href="/pooja-j-resume.pdf" target="_blank" rel="noopener noreferrer">
+            <a href="https://drive.google.com/drive/u/0/folders/1elPlKRjzimSpA3p9GtsKlUqZLG-Bp0A2" target="_blank" rel="noopener noreferrer">
               <FileText className="mr-2 h-5 w-5" />
-              Download Resume
+              View My Resume
             </a>
           </Button>
         </div>
