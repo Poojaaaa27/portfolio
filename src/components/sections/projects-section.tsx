@@ -21,7 +21,7 @@ const projects = [
     image: "https://placehold.co/600x400.png",
     imageHint: "facial recognition",
     tags: ["AI", "ML", "Security"],
-    github: "https://github.com/pooja-j-14/Anti-Spoofing-Detection"
+    github: "https://github.com/Poojaaaa27/spoofDetect"
   },
   {
     title: "Student Stress Level Prediction",
