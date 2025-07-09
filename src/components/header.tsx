@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Menu, Bot } from 'lucide-react';
+import { ThemeToggle } from './theme-toggle';
 
 const navLinks = [
   { href: '#about', label: 'About' },
@@ -39,13 +40,16 @@ export default function Header() {
             PoojaJ.AI
           </Link>
 
-          <nav className="hidden md:flex items-center gap-1">
-            {navLinks.map((link) => (
-              <Button key={link.href} variant="ghost" asChild>
-                <Link href={link.href}>{link.label}</Link>
-              </Button>
-            ))}
-          </nav>
+          <div className="hidden md:flex items-center gap-2">
+            <nav className="flex items-center gap-1">
+              {navLinks.map((link) => (
+                <Button key={link.href} variant="ghost" asChild>
+                  <Link href={link.href}>{link.label}</Link>
+                </Button>
+              ))}
+            </nav>
+            <ThemeToggle />
+          </div>
 
           <div className="md:hidden">
             <Sheet>
@@ -67,6 +71,9 @@ export default function Header() {
                       </Button>
                     ))}
                   </nav>
+                  <div className='mt-8'>
+                    <ThemeToggle />
+                  </div>
                 </div>
               </SheetContent>
             </Sheet>
