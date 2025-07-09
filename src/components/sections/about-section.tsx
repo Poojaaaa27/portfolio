@@ -43,7 +43,7 @@ export default function AboutSection() {
             </CardHeader>
             <CardContent>
               <p className='text-sm text-foreground/90'>
-                When I'm not coding, I'm an avid keyboardist! I love recreating symphony pieces and exploring new melodies—it's my own version of algorithmic composition.
+                When I'm not coding, I'm probably catching up on the latest movies and series or discovering new music.
               </p>
             </CardContent>
           </Card>

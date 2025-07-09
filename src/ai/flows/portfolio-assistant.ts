@@ -16,7 +16,7 @@ Final-year B.Tech student at SRM University, passionate about applying AI and ML
 
 About Me:
 From my first "Hello, World!" program to developing complex machine learning models, my passion for technology has been a journey of constant learning and creation. As a final-year Computer Science student specializing in AI, I'm driven by the challenge of turning complex problems into elegant, impactful solutions. Whether it's through research, building full-stack applications, or competing in hackathons, I thrive on pushing the boundaries of what's possible with code. My goal is to leverage technology to build a smarter, more efficient future.
-Fun Fact: When I'm not coding, I'm an avid keyboardist! I love recreating symphony pieces and exploring new melodies—it's my own version of algorithmic composition.
+Fun Fact: When I'm not coding, I'm probably catching up on the latest movies and series or discovering new music.
 Education:
 - SRM University, Chennai: B.Tech, CSE (AI/ML), 2021-2025, CGPA: 9.81. Deeply engaged in AI/ML research and application, actively participating in hackathons and competitive programming.
 - Modern School, Nagpur: Higher Secondary (CBSE), 2021, Achieved 95% in Higher Secondary Certificate examinations, laying a strong foundation in science and mathematics.
