@@ -8,11 +8,13 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Form, FormControl, FormField, FormItem, FormMessage } from '@/components/ui/form';
-import { Send } from 'lucide-react';
+import { Send, Github, Linkedin, Mail } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { useState, useEffect } from 'react';
 import { generateProjectImage } from '@/app/actions';
 import { Skeleton } from '../ui/skeleton';
+import { Card, CardContent } from '../ui/card';
+import Link from 'next/link';
 
 const formSchema = z.object({
   name: z.string().min(2, { message: 'Name must be at least 2 characters.' }),
@@ -23,9 +25,27 @@ const formSchema = z.object({
 
 type ContactFormValues = z.infer<typeof formSchema>;
 
+const socials = [
+  {
+    label: 'GitHub',
+    icon: Github,
+    href: 'https://github.com/Poojaaaa27',
+  },
+  {
+    label: 'LinkedIn',
+    icon: Linkedin,
+    href: 'https://www.linkedin.com/in/pooja-j-b72427251/',
+  },
+  {
+    label: 'Email',
+    icon: Mail,
+    href: 'mailto:poojaa1627@gmail.com',
+  },
+];
+
 function ContactImage() {
   const [imageUrl, setImageUrl] = useState<string | null>(null);
-  const hint = 'AI assistant robot illustration';
+  const hint = 'AI assistant robot illustration futuristic';
 
   useEffect(() => {
     async function loadImage() {
@@ -34,23 +54,23 @@ function ContactImage() {
         setImageUrl(url);
       } catch (error) {
         console.error("Failed to generate contact image:", error);
-        setImageUrl("https://placehold.co/600x600.png");
+        setImageUrl("https://placehold.co/600x400.png");
       }
     }
     loadImage();
   }, [hint]);
 
   if (!imageUrl) {
-    return <Skeleton className="w-full h-[400px] md:h-full rounded-lg" />;
+    return <Skeleton className="aspect-square w-full rounded-t-lg" />;
   }
 
   return (
-    <div className="relative w-full h-[400px] md:h-full">
+    <div className="relative aspect-square w-full">
         <Image
             src={imageUrl}
-            alt="AI illustration"
+            alt="AI illustration for contact"
             fill
-            className="rounded-lg object-cover"
+            className="rounded-t-lg object-cover"
             data-ai-hint={hint}
         />
     </div>
@@ -96,7 +116,22 @@ export default function ContactSection() {
 
       <div className="grid md:grid-cols-2 gap-12 items-center">
         <div className="hidden md:block">
-            <ContactImage />
+            <Card className="glassmorphism overflow-hidden">
+              <ContactImage />
+              <CardContent className="p-6">
+                <h3 className="font-headline text-2xl font-bold">Pooja J</h3>
+                <p className="text-accent font-semibold">AI Innovator & Creative Technologist</p>
+                <div className="flex justify-center gap-4 mt-6">
+                  {socials.map((social) => (
+                    <Button key={social.label} asChild variant="outline" size="icon" className="rounded-full w-12 h-12 hover:bg-accent/20 hover:text-accent hover:border-accent">
+                      <Link href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.label}>
+                        <social.icon className="w-6 h-6" />
+                      </Link>
+                    </Button>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
         </div>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
