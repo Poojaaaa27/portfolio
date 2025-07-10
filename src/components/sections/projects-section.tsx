@@ -12,7 +12,7 @@ const projects = [
     title: "AgriImpact",
     description: "An innovative full-stack solution to optimize crop planning for farmers using ML-driven predictions.",
     impact: "Reduced manual farm planning effort by 40%.",
-    image: "https://placehold.co/600x400.png",
+    image: "/agriImpact.jpeg",
     imageHint: "admin dashboard",
     tags: ["Full Stack", "AI", "ML"],
     github: "https://github.com/hyderabad25/Team-9"
