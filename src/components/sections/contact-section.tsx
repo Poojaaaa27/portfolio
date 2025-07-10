@@ -86,7 +86,7 @@ export default function ContactSection() {
             <Card className="glassmorphism overflow-hidden">
              <div className="relative aspect-square w-full">
                <Image
-                 src="https://placehold.co/600x400.png"
+                 src="/photo.jpeg"
                  alt="Pooja J"
                  fill
                  className="rounded-t-lg object-cover"
