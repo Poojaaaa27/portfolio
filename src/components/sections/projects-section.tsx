@@ -1,8 +1,13 @@
+'use client';
+
 import Image from 'next/image';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import { Skeleton } from '@/components/ui/skeleton';
+import { useEffect, useState } from 'react';
+import { generateProjectImage } from '@/app/actions';
 
 const projects = [
   {
@@ -10,7 +15,7 @@ const projects = [
     description: "An innovative full-stack solution to optimize crop planning for farmers using ML-driven predictions.",
     impact: "Reduced manual farm planning effort by 40%.",
     image: "https://placehold.co/600x400.png",
-    imageHint: "admin dashboard",
+    imageHint: "A futuristic admin dashboard for an agricultural technology platform, displaying crop yield charts and farm data visualizations.",
     tags: ["Full Stack", "AI", "ML"],
     github: "https://github.com/hyderabad25/Team-9"
   },
@@ -19,7 +24,7 @@ const projects = [
     description: "A robust system to enhance facial recognition security by detecting and preventing spoofing attacks.",
     impact: "Achieved 98% accuracy in identifying spoofing attempts.",
     image: "https://placehold.co/600x400.png",
-    imageHint: "face recognition",
+    imageHint: "A high-tech facial recognition interface scanning a face, with digital overlays indicating a successful anti-spoofing check.",
     tags: ["AI", "ML", "Security"],
     github: "https://github.com/Poojaaaa27/spoofDetect"
   },
@@ -28,7 +33,7 @@ const projects = [
     description: "An analytical tool that predicts student stress levels based on academic and personal factors, enabling timely intervention.",
     impact: "Provided actionable insights for improving student wellness programs.",
     image: "https://placehold.co/600x400.png",
-    imageHint: "data analysis",
+    imageHint: "An abstract data visualization representing student stress levels with colorful, interconnected nodes and graphs.",
     tags: ["Data Science", "ML"],
     github: "https://github.com/Poojaaaa27/Sentiment-Analysis-for-Mental-Health"
   },
@@ -37,13 +42,33 @@ const projects = [
     description: "A platform using AI to tackle food waste by connecting donors with NGOs, featuring waste prediction and optimized delivery routes.",
     impact: "Facilitates efficient food redistribution to support communities in need.",
     image: "https://placehold.co/600x400.png",
-    imageHint: "food donation",
+    imageHint: "A hopeful image of a food donation box being handed over, with subtle digital overlays showing delivery routes and nutritional data.",
     tags: ["AI", "ML", "Full Stack", "Data Science"],
     github: "https://github.com/Poojaaaa27/ResQbites"
   }
 ];
 
 export default function ProjectsSection() {
+  const [projectImages, setProjectImages] = useState<Record<string, string>>({});
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function fetchImages() {
+      setLoading(true);
+      const imagePromises = projects.map(p => generateProjectImage(p.imageHint));
+      const results = await Promise.all(imagePromises);
+      const newImages: Record<string, string> = {};
+      projects.forEach((project, index) => {
+        if (results[index]?.url) {
+          newImages[project.title] = results[index].url;
+        }
+      });
+      setProjectImages(newImages);
+      setLoading(false);
+    }
+    fetchImages();
+  }, []);
+
   return (
     <section id="projects" className="relative">
       <div className="absolute top-1/2 -left-16 w-72 h-72 bg-accent/10 rounded-full blur-3xl -z-10 animate-pulse"></div>
@@ -57,13 +82,16 @@ export default function ProjectsSection() {
           <Card key={index} className="glassmorphism flex flex-col overflow-hidden group hover:border-accent transition-all duration-300 transform hover:-translate-y-2">
             <CardHeader className="p-0">
               <div className="relative h-48 w-full overflow-hidden">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  data-ai-hint={project.imageHint}
-                />
+                {loading || !projectImages[project.title] ? (
+                  <Skeleton className="h-full w-full" />
+                ) : (
+                  <Image
+                    src={projectImages[project.title] || project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                )}
               </div>
             </CardHeader>
             <div className="p-6 flex flex-col flex-grow">

@@ -12,7 +12,7 @@ import SkillsSection from '@/components/sections/skills-section';
 
 export default function Home() {
   return (
-    <div className="relative overflow-x-hidden">
+    <div className="relative overflow-x-hidden bg-background">
       <Header />
       <FloatingSocials />
       <main className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
