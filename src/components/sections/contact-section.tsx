@@ -1,3 +1,4 @@
+
 'use client';
 
 import Image from 'next/image';
@@ -114,18 +115,18 @@ export default function ContactSection() {
         <p className="text-base md:text-lg text-muted-foreground mt-2">Let's collaborate and build something amazing!</p>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-12 items-center">
-        <div className="hidden md:block">
+      <div className="grid md:grid-cols-5 gap-12 items-center">
+        <div className="hidden md:block md:col-span-2">
             <Card className="glassmorphism overflow-hidden">
               <ContactImage />
-              <CardContent className="p-6">
+              <CardContent className="p-6 text-center">
                 <h3 className="font-headline text-2xl font-bold">Pooja J</h3>
-                <p className="text-accent font-semibold">AI Innovator & Creative Technologist</p>
-                <div className="flex justify-center gap-4 mt-6">
+                <p className="text-accent font-semibold text-sm">AI Innovator & Creative Technologist</p>
+                <div className="flex justify-center gap-4 mt-4">
                   {socials.map((social) => (
-                    <Button key={social.label} asChild variant="outline" size="icon" className="rounded-full w-12 h-12 hover:bg-accent/20 hover:text-accent hover:border-accent">
+                    <Button key={social.label} asChild variant="outline" size="icon" className="rounded-full w-10 h-10 hover:bg-accent/20 hover:text-accent hover:border-accent">
                       <Link href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.label}>
-                        <social.icon className="w-6 h-6" />
+                        <social.icon className="w-5 h-5" />
                       </Link>
                     </Button>
                   ))}
@@ -133,16 +134,42 @@ export default function ContactSection() {
               </CardContent>
             </Card>
         </div>
-        <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="md:col-span-3">
+          <Form {...form}>
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <FormField
+                  control={form.control}
+                  name="name"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormControl>
+                        <Input placeholder="Your Name" {...field} className="glassmorphism h-12" />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="email"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormControl>
+                        <Input placeholder="Your Email" {...field} className="glassmorphism h-12" />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </div>
               <FormField
                 control={form.control}
-                name="name"
+                name="subject"
                 render={({ field }) => (
                   <FormItem>
                     <FormControl>
-                      <Input placeholder="Your Name" {...field} className="glassmorphism h-12" />
+                      <Input placeholder="Subject" {...field} className="glassmorphism h-12" />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -150,47 +177,23 @@ export default function ContactSection() {
               />
               <FormField
                 control={form.control}
-                name="email"
+                name="message"
                 render={({ field }) => (
                   <FormItem>
                     <FormControl>
-                      <Input placeholder="Your Email" {...field} className="glassmorphism h-12" />
+                      <Textarea placeholder="Your Message" rows={5} {...field} className="glassmorphism" />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
                 )}
               />
-            </div>
-            <FormField
-              control={form.control}
-              name="subject"
-              render={({ field }) => (
-                <FormItem>
-                  <FormControl>
-                    <Input placeholder="Subject" {...field} className="glassmorphism h-12" />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="message"
-              render={({ field }) => (
-                <FormItem>
-                  <FormControl>
-                    <Textarea placeholder="Your Message" rows={5} {...field} className="glassmorphism" />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <Button type="submit" size="lg" className="w-full" disabled={form.formState.isSubmitting}>
-              <Send className="mr-2 h-5 w-5" />
-              {form.formState.isSubmitting ? "Redirecting..." : "Send Message"}
-            </Button>
-          </form>
-        </Form>
+              <Button type="submit" size="lg" className="w-full" disabled={form.formState.isSubmitting}>
+                <Send className="mr-2 h-5 w-5" />
+                {form.formState.isSubmitting ? "Redirecting..." : "Send Message"}
+              </Button>
+            </form>
+          </Form>
+        </div>
       </div>
     </section>
   );
