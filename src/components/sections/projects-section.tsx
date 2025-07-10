@@ -39,7 +39,7 @@ const projects = [
     title: "ResQbite",
     description: "A platform using AI to tackle food waste by connecting donors with NGOs, featuring waste prediction and optimized delivery routes.",
     impact: "Facilitates efficient food redistribution to support communities in need.",
-    image: "https://placehold.co/600x400.png",
+    image: "/resqbites.png",
     imageHint: "food donation logistics",
     tags: ["AI", "ML", "Full Stack", "Data Science"],
     github: "https://github.com/Poojaaaa27/ResQbites"
