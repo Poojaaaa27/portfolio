@@ -1,3 +1,4 @@
+
 'use client';
 
 import Image from 'next/image';
@@ -7,13 +8,13 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Skeleton } from '@/components/ui/skeleton';
 import { useEffect, useState } from 'react';
-import { generateProjectImage } from '@/app/actions';
 
 const projects = [
   {
     title: "AgriImpact",
     description: "An innovative full-stack solution to optimize crop planning for farmers using ML-driven predictions.",
     impact: "Reduced manual farm planning effort by 40%.",
+    image: "https://placehold.co/600x400.png",
     imageHint: "admin dashboard",
     tags: ["Full Stack", "AI", "ML"],
     github: "https://github.com/hyderabad25/Team-9"
@@ -22,6 +23,7 @@ const projects = [
     title: "Anti Spoofing Detection",
     description: "A robust system to enhance facial recognition security by detecting and preventing spoofing attacks.",
     impact: "Achieved 98% accuracy in identifying spoofing attempts.",
+    image: "https://placehold.co/600x400.png",
     imageHint: "face recognition",
     tags: ["AI", "ML", "Security"],
     github: "https://github.com/Poojaaaa27/spoofDetect"
@@ -30,6 +32,7 @@ const projects = [
     title: "Student Stress Level Prediction",
     description: "An analytical tool that predicts student stress levels based on academic and personal factors, enabling timely intervention.",
     impact: "Provided actionable insights for improving student wellness programs.",
+    image: "https://placehold.co/600x400.png",
     imageHint: "student stress analytics",
     tags: ["Data Science", "ML"],
     github: "https://github.com/Poojaaaa27/Sentiment-Analysis-for-Mental-Health"
@@ -38,43 +41,13 @@ const projects = [
     title: "ResQbite",
     description: "A platform using AI to tackle food waste by connecting donors with NGOs, featuring waste prediction and optimized delivery routes.",
     impact: "Facilitates efficient food redistribution to support communities in need.",
+    image: "https://placehold.co/600x400.png",
     imageHint: "food donation logistics",
     tags: ["AI", "ML", "Full Stack", "Data Science"],
     github: "https://github.com/Poojaaaa27/ResQbites"
   }
 ];
 
-function ProjectImage({ hint, title }: { hint: string, title: string }) {
-  const [imageUrl, setImageUrl] = useState<string | null>(null);
-
-  useEffect(() => {
-    async function loadImage() {
-      try {
-        const { url } = await generateProjectImage(hint);
-        setImageUrl(url);
-      } catch (error) {
-        console.error("Failed to generate project image:", error);
-        // Fallback to a placeholder if generation fails
-        setImageUrl("https://placehold.co/600x400.png");
-      }
-    }
-    loadImage();
-  }, [hint]);
-
-  if (!imageUrl) {
-    return <Skeleton className="h-48 w-full" />;
-  }
-
-  return (
-    <Image
-      src={imageUrl}
-      alt={title}
-      fill
-      className="object-cover group-hover:scale-105 transition-transform duration-500"
-      data-ai-hint={hint}
-    />
-  );
-}
 
 export default function ProjectsSection() {
   return (
@@ -90,7 +63,13 @@ export default function ProjectsSection() {
           <Card key={index} className="glassmorphism flex flex-col overflow-hidden group hover:border-accent transition-all duration-300 transform hover:-translate-y-2">
             <CardHeader className="p-0">
               <div className="relative h-48 w-full overflow-hidden">
-                <ProjectImage hint={project.imageHint} title={project.title} />
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  data-ai-hint={project.imageHint}
+                />
               </div>
             </CardHeader>
             <div className="p-6 flex flex-col flex-grow">
