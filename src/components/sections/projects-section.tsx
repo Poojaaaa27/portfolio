@@ -6,8 +6,6 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { Skeleton } from '@/components/ui/skeleton';
-import { useEffect, useState } from 'react';
 
 const projects = [
   {
