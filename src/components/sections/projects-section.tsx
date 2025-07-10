@@ -30,7 +30,7 @@ const projects = [
     title: "Student Stress Level Prediction",
     description: "An analytical tool that predicts student stress levels based on academic and personal factors, enabling timely intervention.",
     impact: "Provided actionable insights for improving student wellness programs.",
-    image: "https://placehold.co/600x400.png",
+    image: "/studentstress.png",
     imageHint: "student stress analytics",
     tags: ["Data Science", "ML"],
     github: "https://github.com/Poojaaaa27/Sentiment-Analysis-for-Mental-Health"
