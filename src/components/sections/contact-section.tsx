@@ -13,9 +13,10 @@ import { Send, Github, Linkedin, Mail } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { useState, useEffect } from 'react';
 import { generateProjectImage } from '@/app/actions';
-import { Skeleton } from '../ui/skeleton';
-import { Card, CardContent } from '../ui/card';
+import { Skeleton } from '@/components/ui/skeleton';
+import { Card, CardContent } from '@/components/ui/card';
 import Link from 'next/link';
+
 
 const formSchema = z.object({
   name: z.string().min(2, { message: 'Name must be at least 2 characters.' }),
@@ -26,60 +27,26 @@ const formSchema = z.object({
 
 type ContactFormValues = z.infer<typeof formSchema>;
 
-const socials = [
-  {
-    label: 'GitHub',
-    icon: Github,
-    href: 'https://github.com/Poojaaaa27',
-  },
-  {
-    label: 'LinkedIn',
-    icon: Linkedin,
-    href: 'https://www.linkedin.com/in/pooja-j-b72427251/',
-  },
-  {
-    label: 'Email',
-    icon: Mail,
-    href: 'mailto:poojaa1627@gmail.com',
-  },
-];
-
-function ContactImage() {
-  const [imageUrl, setImageUrl] = useState<string | null>(null);
-  const hint = 'AI assistant robot illustration futuristic';
-
-  useEffect(() => {
-    async function loadImage() {
-      try {
-        const { url } = await generateProjectImage(hint);
-        setImageUrl(url);
-      } catch (error) {
-        console.error("Failed to generate contact image:", error);
-        setImageUrl("https://placehold.co/600x400.png");
-      }
-    }
-    loadImage();
-  }, [hint]);
-
-  if (!imageUrl) {
-    return <Skeleton className="aspect-square w-full rounded-t-lg" />;
-  }
-
-  return (
-    <div className="relative aspect-square w-full">
-        <Image
-            src={imageUrl}
-            alt="AI illustration for contact"
-            fill
-            className="rounded-t-lg object-cover"
-            data-ai-hint={hint}
-        />
-    </div>
-  );
-}
-
 
 export default function ContactSection() {
+    const socials = [
+ {
+ label: 'GitHub',
+ icon: Github,
+ href: 'https://github.com/Poojaaaa27',
+ },
+ {
+ label: 'LinkedIn',
+ icon: Linkedin,
+ href: 'https://www.linkedin.com/in/pooja-j-b72427251/',
+ },
+ {
+ label: 'Email',
+ icon: Mail,
+ href: 'mailto:poojaa1627@gmail.com',
+ },
+ ];
+
   const { toast } = useToast();
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(formSchema),
@@ -118,7 +85,16 @@ export default function ContactSection() {
       <div className="grid md:grid-cols-5 gap-12 items-center">
         <div className="hidden md:block md:col-span-2">
             <Card className="glassmorphism overflow-hidden">
-              <ContactImage />
+ <div className="relative aspect-square w-full">
+ <Image
+ src="/photo.jpeg"
+ alt="Pooja J"
+ fill
+ className="rounded-t-lg object-cover"
+ data-ai-hint="Pooja J smiling portrait"
+ />
+ </div>
+
               <CardContent className="p-6 text-center">
                 <h3 className="font-headline text-2xl font-bold">Pooja J</h3>
                 <p className="text-accent font-semibold text-sm">AI Innovator & Creative Technologist</p>
