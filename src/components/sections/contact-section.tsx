@@ -12,7 +12,6 @@ import { Form, FormControl, FormField, FormItem, FormMessage } from '@/component
 import { Send, Github, Linkedin, Mail } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { useState, useEffect } from 'react';
-import { generateProjectImage } from '@/app/actions';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Card, CardContent } from '@/components/ui/card';
 import Link from 'next/link';
@@ -85,15 +84,15 @@ export default function ContactSection() {
       <div className="grid md:grid-cols-5 gap-12 items-center">
         <div className="hidden md:block md:col-span-2">
             <Card className="glassmorphism overflow-hidden">
- <div className="relative aspect-square w-full">
- <Image
- src="/photo.jpeg"
- alt="Pooja J"
- fill
- className="rounded-t-lg object-cover"
- data-ai-hint="Pooja J smiling portrait"
- />
- </div>
+             <div className="relative aspect-square w-full">
+               <Image
+                 src="https://placehold.co/600x400.png"
+                 alt="Pooja J"
+                 fill
+                 className="rounded-t-lg object-cover"
+                 data-ai-hint="Pooja J smiling portrait"
+               />
+             </div>
 
               <CardContent className="p-6 text-center">
                 <h3 className="font-headline text-2xl font-bold">Pooja J</h3>
@@ -159,7 +158,7 @@ export default function ContactSection() {
                     <FormControl>
                       <Textarea placeholder="Your Message" rows={5} {...field} className="glassmorphism" />
                     </FormControl>
-                    <FormMessage />
+                      <FormMessage />
                   </FormItem>
                 )}
               />
