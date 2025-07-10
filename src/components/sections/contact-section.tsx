@@ -10,6 +10,9 @@ import { Textarea } from '@/components/ui/textarea';
 import { Form, FormControl, FormField, FormItem, FormMessage } from '@/components/ui/form';
 import { Send } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import { useState, useEffect } from 'react';
+import { generateProjectImage } from '@/app/actions';
+import { Skeleton } from '../ui/skeleton';
 
 const formSchema = z.object({
   name: z.string().min(2, { message: 'Name must be at least 2 characters.' }),
@@ -19,6 +22,41 @@ const formSchema = z.object({
 });
 
 type ContactFormValues = z.infer<typeof formSchema>;
+
+function ContactImage() {
+  const [imageUrl, setImageUrl] = useState<string | null>(null);
+  const hint = 'AI assistant robot illustration';
+
+  useEffect(() => {
+    async function loadImage() {
+      try {
+        const { url } = await generateProjectImage(hint);
+        setImageUrl(url);
+      } catch (error) {
+        console.error("Failed to generate contact image:", error);
+        setImageUrl("https://placehold.co/600x600.png");
+      }
+    }
+    loadImage();
+  }, [hint]);
+
+  if (!imageUrl) {
+    return <Skeleton className="w-full h-[400px] md:h-full rounded-lg" />;
+  }
+
+  return (
+    <div className="relative w-full h-[400px] md:h-full">
+        <Image
+            src={imageUrl}
+            alt="AI illustration"
+            fill
+            className="rounded-lg object-cover"
+            data-ai-hint={hint}
+        />
+    </div>
+  );
+}
+
 
 export default function ContactSection() {
   const { toast } = useToast();
@@ -58,14 +96,7 @@ export default function ContactSection() {
 
       <div className="grid md:grid-cols-2 gap-12 items-center">
         <div className="hidden md:block">
-            <Image 
-                src="https://placehold.co/600x600.png"
-                alt="AI illustration"
-                width={600}
-                height={600}
-                className="rounded-lg object-cover"
-                data-ai-hint="robot coding"
-            />
+            <ContactImage />
         </div>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
