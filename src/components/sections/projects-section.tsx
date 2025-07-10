@@ -21,7 +21,7 @@ const projects = [
     title: "Anti Spoofing Detection",
     description: "A robust system to enhance facial recognition security by detecting and preventing spoofing attacks.",
     impact: "Achieved 98% accuracy in identifying spoofing attempts.",
-    image: "https://placehold.co/600x400.png",
+    image: "/spoofdetect.png",
     imageHint: "face recognition",
     tags: ["AI", "ML", "Security"],
     github: "https://github.com/Poojaaaa27/spoofDetect"
