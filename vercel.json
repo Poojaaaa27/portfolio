@@ -6,7 +6,7 @@
     }
   },
   "functions": {
-    "src/ai/dev.ts": {
+    "src/ai/genkit.ts": {
       "memory": 1024
     }
   }
