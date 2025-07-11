@@ -10,8 +10,15 @@ export async function getEasterEgg(prompt: string): Promise<EasterEggBotOutput> 
 }
 
 export async function askPortfolioAssistant(query: string): Promise<PortfolioAssistantOutput> {
-  const result = await portfolioAssistant({ query });
-  return result;
+  try {
+    const result = await portfolioAssistant({ query });
+    return result;
+  } catch (e: any) {
+    console.error("Error asking portfolio assistant:", e);
+    return {
+      response: "Sorry, I'm having trouble connecting to my AI brain right now. Please try again in a moment."
+    };
+  }
 }
 
 export async function generateProjectImage(prompt: string): Promise<GenerateImageOutput> {
