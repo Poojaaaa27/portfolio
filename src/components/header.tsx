@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger, SheetDescription } from '@/components/ui/sheet';
 import { Menu, Bot } from 'lucide-react';
 import { ThemeToggle } from './theme-toggle';
 
@@ -59,22 +59,23 @@ export default function Header() {
                   <span className="sr-only">Open menu</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="bg-background/90 backdrop-blur-xl">
-                 <SheetHeader>
-                  <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
+              <SheetContent side="right" className="bg-background/90 backdrop-blur-xl w-[250px] sm:w-[300px]">
+                 <SheetHeader className="text-left border-b border-border pb-4">
+                  <SheetTitle className="flex items-center gap-2 font-headline">
+                    <Bot className="h-6 w-6 text-primary"/>
+                    Mobile Menu
+                  </SheetTitle>
+                  <SheetDescription className="sr-only">A list of navigation links to sections of the page.</SheetDescription>
                 </SheetHeader>
-                <div className="flex flex-col items-center justify-center h-full">
-                <Link href="/" className="flex items-center group mb-8">
-                  <Bot className="h-8 w-8 text-primary" />
-                </Link>
-                  <nav className="flex flex-col items-center gap-6">
+                <div className="flex flex-col h-full py-6">
+                  <nav className="flex flex-col items-start gap-4">
                     {navLinks.map((link) => (
-                      <Button key={link.href} variant="link" className="text-xl text-foreground" asChild>
+                      <Button key={link.href} variant="link" className="text-lg text-foreground" asChild>
                         <Link href={link.href}>{link.label}</Link>
                       </Button>
                     ))}
                   </nav>
-                  <div className='mt-8'>
+                  <div className='mt-auto flex justify-center'>
                     <ThemeToggle />
                   </div>
                 </div>
