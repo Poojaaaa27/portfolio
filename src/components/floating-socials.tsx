@@ -23,7 +23,7 @@ const socials = [
 
 export default function FloatingSocials() {
   return (
-    <div className="fixed bottom-4 right-4 z-50 md:top-1/2 md:-translate-y-1/2 md:bottom-auto md:left-4 md:right-auto">
+    <div className="fixed bottom-4 right-20 md:right-4 z-50 md:top-1/2 md:-translate-y-1/2 md:bottom-auto md:left-4 md:right-auto">
       <TooltipProvider>
         <div className="flex md:flex-col gap-2 p-1 rounded-full glassmorphism">
           {socials.map((social) => (
