@@ -60,11 +60,8 @@ export default function Header() {
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="bg-background/90 backdrop-blur-xl w-[250px] sm:w-[300px]">
-                 <SheetHeader className="text-left border-b border-border pb-4">
-                  <SheetTitle className="flex items-center gap-2 font-headline">
-                    <Bot className="h-6 w-6 text-primary"/>
-                    Mobile Menu
-                  </SheetTitle>
+                 <SheetHeader>
+                  <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
                   <SheetDescription className="sr-only">A list of navigation links to sections of the page.</SheetDescription>
                 </SheetHeader>
                 <div className="flex flex-col h-full py-6">
