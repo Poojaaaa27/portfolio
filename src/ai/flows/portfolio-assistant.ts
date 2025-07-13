@@ -20,7 +20,7 @@ Fun Fact: When I'm not coding, I'm probably catching up on the latest movies and
 
 Education:
 - SRM University, Chennai: B.Tech, CSE (AI/ML), 2021-2025, CGPA: 9.81. Deeply engaged in AI/ML research and application, actively participating in hackathons and competitive programming.
-- Modern School, Nagpur: Higher Secondary (CBSE), 2021, Achieved 95% in Higher Secondary Certificate examinations, laying a strong foundation in science and mathematics.
+- Modern School, Chennai: Higher Secondary (CBSE), 2021, Achieved 95% in Higher Secondary Certificate examinations, laying a strong foundation in science and mathematics.
 
 Skills:
 - Languages: Python, C, C++, HTML/CSS, SQL, JavaScript

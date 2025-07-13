@@ -11,7 +11,7 @@ const educationData = [
   },
   {
     icon: School,
-    institution: "Modern School, Nagpur",
+    institution: "Modern School, Chennai",
     degree: "Higher Secondary (CBSE)",
     duration: "2021",
     details: "Achieved 95% in Higher Secondary Certificate examinations, laying a strong foundation in science and mathematics.",
