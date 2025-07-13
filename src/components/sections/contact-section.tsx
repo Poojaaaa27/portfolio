@@ -82,7 +82,7 @@ export default function ContactSection() {
       </div>
 
       <div className="grid md:grid-cols-5 gap-12 items-center">
-        <div className="hidden md:block md:col-span-2">
+        <div className="md:col-span-2">
             <Card className="glassmorphism overflow-hidden">
              <div className="relative aspect-square w-full">
                <Image
