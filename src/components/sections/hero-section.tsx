@@ -2,12 +2,13 @@ import { Button } from "@/components/ui/button";
 import { ArrowDown, FileText } from "lucide-react";
 import Link from "next/link";
 import { ChatNowButton } from "@/components/chat-now-button";
+import ParticleBackground from "@/components/particle-background";
 
 
 export default function HeroSection() {
   return (
     <section id="home" className="relative h-screen min-h-[700px] flex items-center justify-center text-center overflow-hidden -mt-20">
-      <div className="absolute inset-0 -z-10 animated-gradient"></div>
+      <ParticleBackground />
       <div className="absolute inset-0 w-full h-full bg-background/60 backdrop-blur-sm -z-10"></div>
       
       <div className="relative z-10 flex flex-col items-center gap-6 px-4">
