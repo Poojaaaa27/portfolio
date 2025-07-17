@@ -1,16 +1,13 @@
+'use client';
+
 import { Button } from "@/components/ui/button";
 import { ArrowDown, FileText, Bot } from "lucide-react";
 import Link from "next/link";
 import AnimatedBackground from "../animated-background";
+import { ChatNowButton } from "../chat-now-button";
+
 
 export default function HeroSection() {
-
-  const openChatBot = () => {
-    const trigger = document.getElementById('chatbot-trigger-button');
-    if (trigger) {
-      trigger.click();
-    }
-  };
 
   return (
     <section id="home" className="relative h-screen min-h-[700px] flex items-center justify-center text-center overflow-hidden -mt-20">
@@ -35,10 +32,7 @@ export default function HeroSection() {
               Let's Collaborate
             </Link>
           </Button>
-          <Button size="lg" variant="secondary" onClick={openChatBot}>
-            <Bot className="mr-2 h-5 w-5" />
-            Chat with my AI
-          </Button>
+          <ChatNowButton />
           <Button size="lg" variant="secondary" asChild>
             <a href="https://drive.google.com/drive/u/0/folders/1elPlKRjzimSpA3p9GtsKlUqZLG-Bp0A2" target="_blank" rel="noopener noreferrer">
               <FileText className="mr-2 h-5 w-5" />
