@@ -1,4 +1,0 @@
-toml
-[build]
-  command = "next build"
-  publish = ".next"
