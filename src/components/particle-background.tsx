@@ -24,38 +24,37 @@ const ParticleBackground = () => {
     class Particle {
       x: number;
       y: number;
-      z: number;
-      xProjected: number;
-      yProjected: number;
-      scaleProjected: number;
+      vx: number;
+      vy: number;
+      radius: number;
       color: string;
       
       constructor() {
-        this.x = (Math.random() - 0.5) * canvas.width;
-        this.y = (Math.random() - 0.5) * canvas.height;
-        this.z = Math.random() * canvas.width;
-        this.xProjected = 0;
-        this.yProjected = 0;
-        this.scaleProjected = 0;
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.vx = Math.random() - 0.5;
+        this.vy = Math.random() - 0.5;
+        this.radius = Math.random() * 1.5 + 0.5;
         const primaryColor = getComputedStyle(document.documentElement).getPropertyValue('--primary').trim();
         const accentColor = getComputedStyle(document.documentElement).getPropertyValue('--accent').trim();
         this.color = Math.random() > 0.5 ? `hsl(${primaryColor})` : `hsl(${accentColor})`;
       }
 
-      project() {
-        const perspective = canvas.width * 0.8;
-        this.scaleProjected = perspective / (perspective + this.z);
-        this.xProjected = (this.x * this.scaleProjected) + canvas.width / 2;
-        this.yProjected = (this.y * this.scaleProjected) + canvas.height / 2;
+      update() {
+        this.x += this.vx;
+        this.y += this.vy;
+
+        if (this.x < 0 || this.x > canvas.width) {
+            this.vx *= -1;
+        }
+        if (this.y < 0 || this.y > canvas.height) {
+            this.vy *= -1;
+        }
       }
 
       draw() {
-        this.project();
-        if(this.xProjected < 0 || this.xProjected > canvas.width || this.yProjected < 0 || this.yProjected > canvas.height) {
-            return;
-        }
         ctx!.beginPath();
-        ctx!.arc(this.xProjected, this.yProjected, this.scaleProjected * 2, 0, Math.PI * 2);
+        ctx!.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
         ctx!.fillStyle = this.color;
         ctx!.fill();
       }
@@ -63,7 +62,7 @@ const ParticleBackground = () => {
 
     function init() {
       particles = [];
-      const particleCount = Math.floor(window.innerWidth / 2);
+      const particleCount = Math.floor(window.innerWidth / 20);
       for (let i = 0; i < particleCount; i++) {
         particles.push(new Particle());
       }
@@ -72,12 +71,7 @@ const ParticleBackground = () => {
     function animate() {
       ctx!.clearRect(0, 0, canvas.width, canvas.height);
       for (const particle of particles) {
-        particle.z -= 1.5;
-        if (particle.z < 1) {
-          particle.z = canvas.width;
-          particle.x = (Math.random() - 0.5) * canvas.width;
-          particle.y = (Math.random() - 0.5) * canvas.height;
-        }
+        particle.update();
         particle.draw();
       }
       animationFrameId = requestAnimationFrame(animate);
