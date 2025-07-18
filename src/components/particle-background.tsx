@@ -1,12 +1,22 @@
 
 'use client';
 
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 
 const ParticleBackground = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [colors, setColors] = useState({ primary: '', accent: '' });
 
   useEffect(() => {
+    // This effect runs only on the client, after the component mounts
+    const primaryColor = getComputedStyle(document.documentElement).getPropertyValue('--primary').trim();
+    const accentColor = getComputedStyle(document.documentElement).getPropertyValue('--accent').trim();
+    setColors({ primary: `hsl(${primaryColor})`, accent: `hsl(${accentColor})` });
+  }, []);
+
+  useEffect(() => {
+    if (!colors.primary) return; // Don't start animation until colors are loaded
+
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
@@ -36,9 +46,7 @@ const ParticleBackground = () => {
         this.vx = Math.random() * 0.5 - 0.25;
         this.vy = Math.random() * 0.5 - 0.25;
         this.radius = Math.random() * 1.5 + 0.5;
-        const primaryColor = getComputedStyle(document.documentElement).getPropertyValue('--primary').trim();
-        const accentColor = getComputedStyle(document.documentElement).getPropertyValue('--accent').trim();
-        this.color = Math.random() > 0.3 ? `hsl(${primaryColor})` : `hsl(${accentColor})`;
+        this.color = Math.random() > 0.3 ? colors.primary : colors.accent;
       }
 
       update() {
@@ -78,7 +86,8 @@ const ParticleBackground = () => {
                 let distance = Math.sqrt(Math.pow(particles[a].x - particles[b].x, 2) + Math.pow(particles[a].y - particles[b].y, 2));
                 if (distance < 100) {
                     opacityValue = 1 - (distance / 100);
-                    ctx.strokeStyle = `rgba(128, 128, 128, ${opacityValue})`;
+                    const grayValue = getComputedStyle(document.documentElement).getPropertyValue('--foreground').trim().split(' ')[2];
+                    ctx.strokeStyle = `hsla(0, 0%, ${grayValue}, ${opacityValue})`;
                     ctx.lineWidth = 1;
                     ctx.beginPath();
                     ctx.moveTo(particles[a].x, particles[a].y);
@@ -109,7 +118,7 @@ const ParticleBackground = () => {
       window.removeEventListener('resize', resizeCanvas);
       cancelAnimationFrame(animationFrameId);
     };
-  }, []);
+  }, [colors]);
 
   return <canvas ref={canvasRef} className="absolute top-0 left-0 w-full h-full -z-20" />;
 };

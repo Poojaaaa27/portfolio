@@ -27,7 +27,7 @@ export default function FloatingSocials() {
       <TooltipProvider>
         <div className="flex md:flex-col gap-2 p-1 rounded-full glassmorphism">
           {socials.map((social) => (
-            <Tooltip key={social.label} delayDuration={0}>
+            <Tooltip key={social.href} delayDuration={0}>
               <TooltipTrigger asChild>
                 <Button asChild variant="ghost" size="icon" className="rounded-full w-12 h-12 hover:bg-accent/30 hover:text-accent">
                   <Link href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.label}>
