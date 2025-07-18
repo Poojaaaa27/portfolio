@@ -1,3 +1,6 @@
+
+'use client';
+
 import { Button } from "@/components/ui/button";
 import { ArrowDown, FileText } from "lucide-react";
 import Link from "next/link";
@@ -13,10 +16,10 @@ export default function HeroSection() {
       
       <div className="relative z-10 flex flex-col items-center gap-6 px-4">
         <div className="flex flex-col items-center gap-4">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold font-headline tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-gray-900 via-gray-700 to-gray-800 dark:from-gray-200 dark:to-gray-400">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold font-headline tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-primary animate-text-gradient">
             Pooja J
           </h1>
-          <p className="text-lg md:text-xl font-medium text-accent font-headline">
+          <p className="text-lg md:text-xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-accent via-primary to-accent animate-text-gradient-slow">
             AI Innovator | Creative Technologist | Real-World Problem Solver
           </p>
         </div>
