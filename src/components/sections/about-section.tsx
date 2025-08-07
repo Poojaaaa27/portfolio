@@ -1,5 +1,5 @@
-import { GraduationCap, School, Sparkles } from 'lucide-react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import Image from 'next/image';
+import { GraduationCap, School } from 'lucide-react';
 
 const educationData = [
   {
@@ -28,35 +28,46 @@ export default function AboutSection() {
         <p className="text-base md:text-lg text-muted-foreground mt-2">My journey into the world of technology.</p>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-8 items-start">
-        <div className="flex flex-col gap-6 text-base text-foreground/80 text-left">
-          <p>
-            I'm a final-year Computer Science student at SRM University, specializing in AI/ML and passionate about solving real-world challenges.
-          </p>
-          <p>
-            I thrive at the intersection of technology and creativity, always eager to learn and collaborate on impactful projects.
-          </p>
-          <p>
-            Beyond the code, I enjoy tackling new challenges and exploring emerging tech. If you're looking for a driven innovator, let's connect!
-          </p>
+      <div className="grid lg:grid-cols-3 gap-12 items-start">
+        <div className="relative w-full aspect-square rounded-lg overflow-hidden group lg:col-span-1">
+            <Image 
+                src="https://placehold.co/600x600.png"
+                alt="Pooja J"
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-500"
+                data-ai-hint="professional portrait"
+            />
         </div>
 
-        <div className="flex flex-col gap-6 relative">
-            <div className="absolute left-4 top-4 bottom-4 w-0.5 bg-border -z-1"></div>
-            {educationData.map((item, index) => (
-                <div key={index} className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-secondary text-primary flex items-center justify-center mt-1">
-                        <item.icon className="w-6 h-6" />
-                    </div>
-                    <div className="flex-grow">
-                        <h3 className="text-xl font-bold font-headline">{item.institution}</h3>
-                        <p className="text-md font-semibold text-accent">{item.degree}</p>
-                        <p className="text-sm text-muted-foreground mb-2">{item.duration}</p>
+        <div className="lg:col-span-2">
+            <div className="flex flex-col gap-6 text-base text-foreground/80 text-left mb-8">
+                <p>
+                    I'm a final-year Computer Science student at SRM University, specializing in AI/ML and passionate about solving real-world challenges.
+                </p>
+                <p>
+                    I thrive at the intersection of technology and creativity, always eager to learn and collaborate on impactful projects.
+                </p>
+                <p>
+                    Beyond the code, I enjoy tackling new challenges and exploring emerging tech. If you're looking for a driven innovator, let's connect!
+                </p>
+            </div>
+            <div className="flex flex-col gap-6 relative">
+                <div className="absolute left-4 top-4 bottom-4 w-0.5 bg-border -z-1"></div>
+                {educationData.map((item, index) => (
+                    <div key={index} className="flex items-start gap-4">
+                        <div className="flex-shrink-0 w-12 h-12 rounded-full bg-secondary text-primary flex items-center justify-center mt-1">
+                            <item.icon className="w-6 h-6" />
+                        </div>
+                        <div className="flex-grow">
+                            <h3 className="text-xl font-bold font-headline">{item.institution}</h3>
+                            <p className="text-md font-semibold text-accent">{item.degree}</p>
+                            <p className="text-sm text-muted-foreground mb-2">{item.duration}</p>
 
-                        <p className="text-base text-foreground/80">{item.details}</p>
+                            <p className="text-base text-foreground/80">{item.details}</p>
+                        </div>
                     </div>
-                </div>
-            ))}
+                ))}
+            </div>
         </div>
       </div>
     </section>
